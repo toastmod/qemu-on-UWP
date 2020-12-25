@@ -8,8 +8,11 @@ QEMU is a large C project, so this primarily involves porting a makefile project
 </br>I don't know how QEMU's build process works and I'm not experienced with makefile, however there is a possible work around.
 
 # Ideas on how this could work:
+## Wrapping QEMU as a native library into a UWP Library
+This could be done by using VS2017's makefile tools to build QEMU as a library. Then take said library and wrap it in a UWP compatible library.
+
 ## Simply converting the makefile to a VS2017 solution
-I found a project <a href="https://github.com/xHypervisor/WinQEMU">here</a> that has already done this with much earlier versions of QEMU. However the solution is a bit old and converting it to VS2017 didn't work properly for me. This is probably the most easiest way to make it work, I just need to learn more about upgrading solutions or else learn to translate a makefile project to a VS solution.
+I found a project <a href="https://github.com/xHypervisor/WinQEMU">here</a> that has already done this with much earlier versions of QEMU. However the solution is a bit old and converting it to VS2017 didn't work properly for me. This is probably the best way to make it work, I just need to learn more about upgrading solutions or else learn to translate a makefile project to a VS solution.
 
 ## Using <a href="https://github.com/bdbai/firstuwp-rs">rust</a> via <a href="https://github.com/jameysharp/corrode">corrode</a>
 I think it will be much easier to combine UWP and QEMU under rust instead of VS using the firstuwp-rs project as a template and corrode to convert the makefile project to a rust project.
